@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile utilisateur</title>
+    <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../resources/css/style.css" rel="stylesheet">
+</head>
+<body onload="getUser()">
+<div class="container-fluid">
+    <div class="profil">
+        <div class="row">
+            <div class="col-sm-4 col-md-3">
+                <div class="thumbnail">
+                    <img src="../resources/images/profile-icon.png" alt="Default Avatar">
+                    <div class="caption">
+                        <h3 align="center" name="pseudo"></h3>
+                        <p name="donnees"></p>
+                        <p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#changeUsername" >Modifier pseudo</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-md-6 col-sm-6 col-lg-6">
+                <h3>Listes des salons</h3>
+                <button type="button" data-toggle="modal" data-target="#addChannel" class="btn marge btn-sm btn-success" aria-label="Left Align">
+                    Ajouter un salon
+                </button>
+                <div class="list-group" name="liste_salons">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Récupération de l'objet depuis la session -->
+    <!--  Bouton se déconnecter avec le parametre name deco  -->
+    <a data-method="get" class='btn btn-success' href="javascript:logout()" data-parameter-name="deco" data-parameter-value="true">Déconnexion</a>
+</div>
+
+<!-- Modal pour creer un nouveau salon-->
+<div class="modal fade" id="addChannel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Ajouter un salon</h4>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">#</span>
+                    <input type="text" autofocus class="form-control" placeholder="channel" name="channel"
+                           aria-describedby="basic-addon2" id="name_salon" required="required">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="newChannel()" type="button" class="btn btn-primary">Enregistrer</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<!-- Modal pour changer le pseudo de l'utilisateur-->
+<div class="modal fade" id="changeUsername" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Changer mon pseudo</h4>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">@</span>
+                    <input type="text" autofocus class="form-control" placeholder="username" name="username"
+                           aria-describedby="basic-addon2" id="username" required="required">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="modifyUsername()" type="button" class="btn btn-primary">Enregistrer</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script type="text/javascript" src="../resources/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../resources/js/script.js"></script>
+<script type="text/javascript" src="../resources/js/ajax.js"></script>
+<script type="text/javascript" src="../resources/js/message.js"></script>
+<script type="text/javascript" src="../resources/js/user.js"></script>
+<script type="text/javascript" src="../resources/js/util.js"></script>
+<script type="text/javascript" src="../resources/js/ajax_func.js"></script>
+
+</body>
+</html>

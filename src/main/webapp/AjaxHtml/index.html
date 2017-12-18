@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenue au TP Chat </title>
+    <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../resources/css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8 col-lg-offset-2 col-lg-8 cn_pr">
+            <div class="image_accueil"><img alt="Image de bienvenue" src="../resources/images/chatimage.png"></div>
+            <h2>Bienvenue sur le chat en ligne</h2>
+            <p class="bg-warning">Si tu n'es pas encore inscrit, clic <a href="../inscription.jsp">ici</a>. </p>
+            <form action="javascript:login()">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">@</span>
+                    <input type="text" autofocus class="form-control" placeholder="Pseudo" name="username"
+                           aria-describedby="basic-addon1" id="name" required="required">
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="login()">Se connecter</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../resources/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../resources/js/script.js"></script>
+<script type="text/javascript" src="../resources/js/ajax.js"></script>
+<script type="text/javascript" src="../resources/js/util.js"></script>
+<script type="text/javascript" src="../resources/js/message.js"></script>
+<script type="text/javascript" src="../resources/js/user.js"></script>
+<script type="text/javascript" src="../resources/js/ajax_func.js"></script>
+
+</body>
+</html>

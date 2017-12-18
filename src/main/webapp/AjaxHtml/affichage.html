@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- Encodage CSS BOOSTRAP et personalisé -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../resources/css/style.css" rel="stylesheet">
+    <title>Affichage des messages</title>
+</head>
+<body id="mess" class="body_display" onload="getMessagesBySalon()">
+<div class='row bgall'>
+    <div class='col-xs-12 col-md-12 col-sm-12 col-lg-12'>
+        <div class='panel panel-info bgelement'>
+            <div class='panel-heading'><h3 class='panel-title'>Listes des messages</h3>
+            </div>
+            <div class='panel-body' id="scroll_body">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal pour verifier qu'on veut supprimer un message-->
+<div class="modal fade" id="deleteMessage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Tu veux vraiment supprimer ce message?</h4>
+            </div>
+            <div class="modal-footer">
+                <button onclick="deleteMessage()" type="button" class="btn marge btn-primary">Supprimer</button>
+                <button onclick="location.reload()" type="button" class="btn btn-default">Annuler</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script type="text/javascript" src="../resources/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../resources/js/script.js"></script>
+<script type="text/javascript" src="../resources/js/ajax.js"></script>
+<script type="text/javascript" src="../resources/js/util.js"></script>
+<script type="text/javascript" src="../resources/js/message.js"></script>
+<script type="text/javascript" src="../resources/js/user.js"></script>
+<script type="text/javascript" src="../resources/js/ajax_func.js"></script>
+</body>
+</html>

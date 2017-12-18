@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>Page des Messages</title>
+        <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../resources/css/style.css" rel="stylesheet">
+	</head>
+<body onload="verifierURL()">
+<div class="container">
+	<a href="profil.html" class="btn btn-primary"> <span class="glyphicon glyphicon-chevron-left"></span> Choisir un autre salon</a>
+
+    <iframe id="messages" name="Affichageframe" src="affichage.html?salon=" style="height: 400px;"></iframe>
+	<form action="javascript:addMessage()" class="formmessage" method="POST">
+		<label style="margin:10px 0;">Message: </label>
+        <label id="loading" style="visibility: hidden">..::Chargement::..</label>
+	<textarea id="message-content" class="form-control" autofocus rows="3" name="contenu">
+    </textarea>
+		<input type="submit" class="btn btn-primary" value="envoyer">
+	</form>
+
+    <!--Récupération de l'objet depuis la session -->
+    <!--  Bouton se déconnecter avec le parametre name deco  -->
+    <a data-method="get" class='btn btn-success' href="javascript:logout()" data-parameter-name="deco" data-parameter-value="true">Déconnexion</a>
+</div>
+
+<!-- Modal pour voir le contenu d'un message-->
+<div class="modal fade" id="showMessage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+						aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Contenu du message</h4>
+			</div>
+			<div class="modal-body">
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1">?</span>
+					<input type="text" autofocus class="form-control" placeholder="message" name="message"
+						   aria-describedby="basic-addon2" id="message" required="required">
+				</div>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script type="text/javascript" src="../resources/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../resources/js/script.js"></script>
+<script type="text/javascript" src="../resources/js/ajax.js"></script>
+<script type="text/javascript" src="../resources/js/util.js"></script>
+<script type="text/javascript" src="../resources/js/message.js"></script>
+<script type="text/javascript" src="../resources/js/user.js"></script>
+<script type="text/javascript" src="../resources/js/ajax_func.js"></script>
+</body>
+</html>
